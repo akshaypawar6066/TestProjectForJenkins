@@ -14,6 +14,11 @@ public class LoginSteps {
 		System.out.println("Navigate to login page");
 	}
 	
+	@When("user enters password")
+	public void enterPassword()
+	{
+		System.out.println("Entering password");
+	}
 	
 	@When("user enters username")
 	public void entersUsername()
@@ -21,11 +26,6 @@ public class LoginSteps {
 		System.out.println("entering username");
 	}
 
-	@When("user enters password")
-	public void enterPassword()
-	{
-		System.out.println("Entering password");
-	}
 	
 	@When("user click on login button")
 	public void clickOnLogin()
@@ -33,7 +33,7 @@ public class LoginSteps {
 		System.out.println("Clicking on login button");
 	}
 	
-	@Then("user click on login button")
+	@Then("user redirects to home page")
 	public void validateHomePage()
 	{
 		System.out.println("Validating on Home page");
