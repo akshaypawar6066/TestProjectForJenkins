@@ -1,79 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-30T21:27:26 IST" name="Default suite" finished-at="2023-06-30T21:27:27 IST" duration-ms="996">
+  <suite started-at="2023-07-03T21:24:48 IST" name="Default suite" finished-at="2023-07-03T21:24:54 IST" duration-ms="5980">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.OrdersRunner@66f57048]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.ScenarioOutlineRunner@66f57048]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-06-30T21:27:26 IST" name="Default test" finished-at="2023-06-30T21:27:27 IST" duration-ms="996">
-      <class name="runner.OrdersRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.OrdersRunner@66f57048]" started-at="2023-06-30T21:27:26 IST" name="setUpClass" finished-at="2023-06-30T21:27:27 IST" duration-ms="560" status="PASS">
+    <test started-at="2023-07-03T21:24:48 IST" name="Default test" finished-at="2023-07-03T21:24:54 IST" duration-ms="5980">
+      <class name="runner.ScenarioOutlineRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.ScenarioOutlineRunner@66f57048]" started-at="2023-07-03T21:24:48 IST" name="setUpClass" finished-at="2023-07-03T21:24:50 IST" duration-ms="1876" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@18230356]]>
+                <![CDATA[org.testng.TestRunner@38eb2fb0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.OrdersRunner@66f57048]" started-at="2023-06-30T21:27:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-30T21:27:27 IST" duration-ms="241" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.ScenarioOutlineRunner@66f57048]" started-at="2023-07-03T21:24:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-07-03T21:24:50 IST" duration-ms="447" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Fetch currently placed order information"]]>
+                <![CDATA["Signup to application with different dataset"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Orders functionality"]]>
+                <![CDATA["Signup functionality"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.OrdersRunner@66f57048]" started-at="2023-06-30T21:27:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-30T21:27:27 IST" duration-ms="28" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.ScenarioOutlineRunner@66f57048]" started-at="2023-07-03T21:24:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-07-03T21:24:50 IST" duration-ms="75" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Fetch previously placed order information"]]>
+                <![CDATA["Signup to application with different dataset"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Orders functionality"]]>
+                <![CDATA["Signup functionality"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.OrdersRunner@66f57048]" started-at="2023-06-30T21:27:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-30T21:27:27 IST" duration-ms="31" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.ScenarioOutlineRunner@66f57048]" started-at="2023-07-03T21:24:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-07-03T21:24:51 IST" duration-ms="90" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Fetch cancelled order information"]]>
+                <![CDATA["Signup to application with different dataset"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Orders functionality"]]>
+                <![CDATA["Signup functionality"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.OrdersRunner@66f57048]" started-at="2023-06-30T21:27:27 IST" name="tearDownClass" finished-at="2023-06-30T21:27:27 IST" duration-ms="5" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.ScenarioOutlineRunner@66f57048]" started-at="2023-07-03T21:24:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-07-03T21:24:51 IST" duration-ms="141" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Signup to application with different dataset"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Signup functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.ScenarioOutlineRunner@66f57048]" started-at="2023-07-03T21:24:51 IST" name="tearDownClass" finished-at="2023-07-03T21:24:54 IST" duration-ms="3148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- runner.OrdersRunner -->
+      </class> <!-- runner.ScenarioOutlineRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
