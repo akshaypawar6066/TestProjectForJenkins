@@ -7,11 +7,11 @@ import io.cucumber.testng.CucumberOptions;
 		
 		features = {"src\\test\\resources\\applicationfeature\\Campaigns.feature"},
 		
-		glue = {"steps"}, 
+		glue = {"steps", "hooks" }, 
 		
 		plugin = {"pretty"},
 		
-		tags = "@feature1"
+		dryRun = true
 		
 		
 		)

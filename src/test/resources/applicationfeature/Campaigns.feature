@@ -1,4 +1,4 @@
-@feature1
+
 Feature: Sending Campaigns
 
 @sanity @functional

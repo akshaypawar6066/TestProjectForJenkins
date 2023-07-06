@@ -8,7 +8,7 @@ import io.cucumber.java.BeforeStep;
 public class MyHooks {
 	
 	
-	@Before(order = 1)
+	@Before("@regression")
 	public void beforeHook1()
 	{
 		System.out.println("Before hook1");
@@ -21,7 +21,7 @@ public class MyHooks {
 //		System.out.println("Before hook2");
 //	}	
 	
-	@After(order = 1)
+	@After("@functional")
 	public void afterHook1()
 	{
 		System.out.println("After hook1");
