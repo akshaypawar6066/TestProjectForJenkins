@@ -15,9 +15,8 @@ Then deal sectio should get open
 
 Scenario: Login to application
 Given User is at landing page
-When user clicks on signin button
-And User enters the username
-And User enters the password
-And User confirms signin
+When User enters the username as "8176867662"
+And User enters the password as "123456"
+
 
 	
