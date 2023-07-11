@@ -2,6 +2,7 @@ package pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -72,19 +73,20 @@ public class HomePage {
 	{
 		wait.until(ExpectedConditions.visibilityOf(smartPhoneCarousel));
 		
-		smartPhoneCarousel.click();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
 		
-				
+		js.executeScript("arguments[0].click();", smartPhoneCarousel);
+						
 	}
 	
 	public boolean carouselNavigation() {
-		boolean isVisible = false;
+		
 		
 		wait.until(ExpectedConditions.visibilityOf(smartPhones));
 		
-		isVisible = true;
+		boolean isdisplayed = smartPhones.isDisplayed();
 		
-		return isVisible;
+		return isdisplayed;
 			
 	}
 	
