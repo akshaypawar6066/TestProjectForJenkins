@@ -4,10 +4,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import qa.DriverFactory;
 
 public class MyAppHooks {
@@ -30,15 +33,45 @@ public class MyAppHooks {
 		
 		String browsername = prop.getProperty("browser");// reading the value from properties file
 		
+		String maven_browserName = System.getProperty("clibrowser");
+		String enteredurl = System.getProperty("url");
+		
+		System.out.println(enteredurl);
+		
+		
+		if(maven_browserName!= null)
+		{
+			browsername = maven_browserName;
+		}
+		
+		
 		driver = df.initBrowser(browsername);// launching the browser
 		
 		driver.manage().window().maximize();
 	}
 	
+	@After(order = 2)
+	public void tearDown(Scenario scenario)
+	{
+		boolean isfailed = scenario.isFailed();
+		
+		if(isfailed)
+		{
+			String scenarioName = scenario.getName();
+			
+			String screenshotname=  scenarioName.replaceAll(" ", "_");
+			
+			TakesScreenshot ts = (TakesScreenshot)driver;
+			
+			byte[] source = ts.getScreenshotAs(OutputType.BYTES);
+			
+			scenario.attach(source, "image/png", screenshotname);
+			
+		}
+	}
 	
-	
-	@After
-	public void tearDown()
+	@After(order = 1)
+	public void quitBrowser()
 	{
 		driver.quit();
 	}

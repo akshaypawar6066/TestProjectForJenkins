@@ -7,12 +7,14 @@ import io.cucumber.testng.CucumberOptions;
 		
 		features = {"src\\test\\resources\\execution"},
 		
+		
+//		features = {"@target/failedrun.txt"},
+		
 		glue = {"execution"},
 		
-		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }
-		
-			
+		plugin = {"pretty", "rerun:target/failedrun.txt"}
+				
 		)
-public class AmazonRunnerTest extends AbstractTestNGCucumberTests {
+public class AmazonFailedRunnerTest extends AbstractTestNGCucumberTests {
 
 }
