@@ -12,11 +12,12 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import qa.DriverFactory;
+import qa.DriverFactory2;
 
 public class MyAppHooks {
 
 	WebDriver driver;
-	DriverFactory df;
+	DriverFactory2 df;
 	
 	@Before
 	public void launchBrowser() throws IOException
@@ -29,7 +30,7 @@ public class MyAppHooks {
 		
 		prop.load(fis);
 		
-		 df = new DriverFactory();
+		 df = new DriverFactory2();
 		
 		String browsername = prop.getProperty("browser");// reading the value from properties file
 		
