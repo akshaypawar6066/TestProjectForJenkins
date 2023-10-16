@@ -1,6 +1,7 @@
 package execution;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -12,7 +13,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import qa.DriverFactory;
-import qa.DriverFactory2;
+import utility.Screenshots;
 
 public class MyAppHooks {
 
@@ -52,21 +53,20 @@ public class MyAppHooks {
 	}
 	
 	@After(order = 2)
-	public void tearDown(Scenario scenario)
+	public void tearDown(Scenario scenario) throws FileNotFoundException, IOException
 	{
 		boolean isfailed = scenario.isFailed();
 		
 		if(isfailed)
 		{
 			String scenarioName = scenario.getName();
-			
-			String screenshotname=  scenarioName.replaceAll(" ", "_");
+			String name = scenarioName.replaceAll(" ", "_");
 			
 			TakesScreenshot ts = (TakesScreenshot)driver;
 			
-			 String source = ts.getScreenshotAs(OutputType.BASE64);
+			byte[] source = ts.getScreenshotAs(OutputType.BYTES);
 			
-			scenario.attach(source, "image/png", screenshotname);
+			scenario.attach(source, "image/png", name);
 			
 		}
 	}
