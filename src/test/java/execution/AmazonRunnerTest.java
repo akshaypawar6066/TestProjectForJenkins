@@ -11,13 +11,15 @@ import io.cucumber.testng.CucumberOptions;
 		
 		glue = {"execution"},
 		
-		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }
+		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
+		
+		tags = "@sanity"
 		
 			
 		)
 public class AmazonRunnerTest extends AbstractTestNGCucumberTests {
 	
-	@DataProvider(parallel = true)
+	@DataProvider(parallel = false)
 	public Object[][] scenarios()
 	{
 		return super.scenarios();

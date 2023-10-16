@@ -12,11 +12,11 @@ import qa.DriverFactory2;
 
 public class HomePageSteps {
 	
-	HomePage homepage = new HomePage(DriverFactory2.getDriver());
+	HomePage homepage = new HomePage(DriverFactory.getDriver());
 	
 	@Given("User is at landing page")
 	public void user_is_at_landing_page() {
-	    WebDriver driver = DriverFactory2.getDriver();
+	    WebDriver driver = DriverFactory.getDriver();
 	    
 	    driver.get("https://www.amazon.in/");
 	}

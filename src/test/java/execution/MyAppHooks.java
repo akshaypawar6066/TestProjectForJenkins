@@ -17,7 +17,7 @@ import qa.DriverFactory2;
 public class MyAppHooks {
 
 	WebDriver driver;
-	DriverFactory2 df;
+	DriverFactory df;
 	
 	@Before
 	public void launchBrowser() throws IOException
@@ -30,7 +30,7 @@ public class MyAppHooks {
 		
 		prop.load(fis);
 		
-		 df = new DriverFactory2();
+		 df = new DriverFactory();
 		
 		String browsername = prop.getProperty("browser");// reading the value from properties file
 		
