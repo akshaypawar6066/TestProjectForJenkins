@@ -3,7 +3,7 @@ Feature: Home page functionality
 @sanity
 Scenario: validation of title
 Given User is at landing page
-Then Page title should contains "Shopping"
+Then Page title should contains "Shoppingg"
 
 @functional
 Scenario: verify cart icon
