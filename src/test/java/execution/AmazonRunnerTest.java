@@ -11,7 +11,9 @@ import io.cucumber.testng.CucumberOptions;
 		
 		glue = {"execution"},
 		
-		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
+		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" , 
+					"json:target/cucumber-report.json",
+					"html:target/cucumber-reports/reports.html"},
 		
 		tags = "@sanity"
 		
