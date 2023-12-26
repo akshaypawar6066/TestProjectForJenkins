@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 	
-	@FindBy(xpath = "//*[@id='nav-cart']")
+	@FindBy(xpath = "//*[@id='nav-cart122']")
 	WebElement    cartIcon;
 	
 	@FindBy(xpath = "(//*[@class='a-carousel-card']//img[@alt = 'op'])[1]")
