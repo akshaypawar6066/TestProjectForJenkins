@@ -9,10 +9,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -56,41 +52,24 @@ public class MyAppHooks {
 		driver.manage().window().maximize();
 	}
 	
-	public String getBase64Screenshot()
-	{
-	    return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
-	}
-	
-	
 	@After(order = 2)
-	public void af(Scenario scenario) throws IOException, InterruptedException
+	public void tearDown(Scenario scenario) throws FileNotFoundException, IOException
 	{
-	    if(scenario.isFailed())
-	    {		       
-	        ExtentCucumberAdapter.getCurrentStep().log(Status.FAIL, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Screenshot()).build());
-	    }
-		 
+		boolean isfailed = scenario.isFailed();
+		
+		if(isfailed)
+		{
+			String scenarioName = scenario.getName();
+			String name = scenarioName.replaceAll(" ", "_");
+			
+			TakesScreenshot ts = (TakesScreenshot)driver;
+			
+			byte[] source = ts.getScreenshotAs(OutputType.BYTES);
+			
+			scenario.attach(source, "image/png", name);
+			
+		}
 	}
-	
-	
-//	@After(order = 2)
-//	public void tearDown(Scenario scenario) throws FileNotFoundException, IOException
-//	{
-//		boolean isfailed = scenario.isFailed();
-//		
-//		if(isfailed)
-//		{
-//			String scenarioName = scenario.getName();
-//			String name = scenarioName.replaceAll(" ", "_");
-//			
-//			TakesScreenshot ts = (TakesScreenshot)driver;
-//			
-//			byte[] source = ts.getScreenshotAs(OutputType.BYTES);
-//			
-//			scenario.attach(source, "image/png", name);
-//			
-//		}
-//	}
 	
 	@After(order = 1)
 	public void quitBrowser()
