@@ -6,4 +6,5 @@
   <class name="execution.AmazonRunnerTest"></class>
   </classes>
   </test> <!-- Test -->
+  
 </suite> <!-- Suite -->
